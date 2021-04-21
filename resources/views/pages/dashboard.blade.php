@@ -48,7 +48,7 @@
     <section class="recent-logs mb-4 row .row-cols-2">
         <div class="col">
             <!-- <h1 class="form-text d-inline bg-success text-white text-center py-1 px-2">First Term
-              </h1> -->
+                      </h1> -->
             <div class="card border-0 border-bottom border-start">
                 <div class="card-body pb-0">
                     <table class="table table-hover">
@@ -474,4 +474,6 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
 @endsection

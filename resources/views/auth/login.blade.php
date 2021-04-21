@@ -26,12 +26,27 @@
                     <label for="floatingPassword">Password</label>
                 </div>
 
-                <!-- Remember Me -->
-                <div class="checkbox my-4">
+                <!-- Show Password -->
+                {{-- <div class="checkbox mt-2 mb-4">
                     <label>
-                        <input type="checkbox" value="remember-me"> Remember me
+                        <input type="checkbox" value="remember-me"> Show Password
+                    </label>
+                </div> --}}
+                <div class="checkbox mt-2 mb-4">
+                    <label>
+                        <input type="checkbox" value="remember-me" onclick="(function(e, el){
+                            document.getElementById('floatingPassword').type = el.checked ? 'text' : 'password';
+                            })(event, this)"> Show Password
                     </label>
                 </div>
+                {{-- <label class="input-group-addon">
+                    <input type="checkbox" style="display:none"
+                      onclick="(function(e, el){
+                        document.getElementById('password').type = el.checked ? 'text' : 'password';
+                        el.parentNode.lastElementChild.innerHTML = el.checked ? '<i class=\'glyphicon glyphicon-eye-close\'>' : '<i class=\'glyphicon glyphicon-eye-open\'>';
+                        })(event, this)">
+                     <span><i class="glyphicon glyphicon-eye-open"></i></span>
+                  </label> --}}
 
                 <button class="w-100 btn btn-lg btn-primary text-white mb-2 rounded-0" type="submit">Log
                     In</button>

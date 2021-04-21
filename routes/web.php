@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\InstructionLogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 // Pages
 Route::get('/dashboard', function () {
-    return view('pages.dashboard');
+    return view('pages.dashboard')->with("currentPage", "Dashboard");
 })->middleware(['auth'])->name('dashboard');
 
 /* STARTING POINT */
+Route::resource('instructionlog', InstructionLogController::class);

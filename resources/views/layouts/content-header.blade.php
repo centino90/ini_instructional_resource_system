@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="d-flex">
             <h1 class="fs-4">
-                Dashboard
+                {{ $currentPage }}
             </h1>
             <nav aria-label="breadcrumb" class="ms-auto">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active" aria-current="page">
-                        Dashboard
+                        {{ $currentPage }}
                     </li>
                 </ol>
             </nav>

@@ -10894,7 +10894,7 @@ h1.post-title, .post-title.h1 {
   border-width: 1em 1em 0 0;
 }
 
-/* Ribbon from */
+/* Ribbon from https://codepen.io/beezelBug/pen/qjPKeM */
 #ribbon-container {
   position: absolute;
   bottom: -10px;
@@ -11128,3 +11128,6 @@ a {
 }
 
 /* STARTING POINT */
+#card {
+  background-color: yellow;
+}
