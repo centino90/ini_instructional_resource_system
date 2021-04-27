@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="form-text">
-                            Latest Instruction For You
+                            Latest Instruction For You 
                             <span class="badge rounded-pill bg-danger ms-2">9+</span>
                         </h1>
                         <p class="card-text"><small class="text-muted">3 mins ago</small></p>
