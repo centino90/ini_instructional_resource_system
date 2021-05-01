@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+// Body
+$body-bg: #F8F9FC;
+
 // Typography
-// $font-family-sans-serif: 'Nunito', sans-serif;
-// $font-size-base: 0.9rem;
-// $line-height-base: 1.6;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
 
 // Colors
-$primary: #0089d0;
-$blue-100: #b3dcf1;
-$blue-200: #80c4e8;
-$blue-300: #4dacde;
-$blue-400: #1a95d5;
-$blue-500: #0089d0;
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e65550;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+$enable-rounded: false;
+
+$primary: $purple;
+$secondary: #2C2050;
+$warning: #FFBB08;

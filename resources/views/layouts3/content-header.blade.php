@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="d-flex">
             <h1 class="fs-4">
-                {{ $currentPage }}
+                Ward
             </h1>
             <nav aria-label="breadcrumb" class="ms-auto">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active" aria-current="page">
-                        {{ $currentPage }}
+
                     </li>
                 </ol>
             </nav>

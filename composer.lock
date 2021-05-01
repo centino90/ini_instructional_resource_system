@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d95163537f4ff3ed1635f01791a98094",
+    "content-hash": "c555824cb6a451e2e082baf16e0bb2b6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5604,16 +5604,16 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "b6e804b6b8e6f87e510622ed6ab9771e8219e4c2"
+                "reference": "222889eecf49bb02ea91e2122c9ab9f8379c0c45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/b6e804b6b8e6f87e510622ed6ab9771e8219e4c2",
-                "reference": "b6e804b6b8e6f87e510622ed6ab9771e8219e4c2",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/222889eecf49bb02ea91e2122c9ab9f8379c0c45",
+                "reference": "222889eecf49bb02ea91e2122c9ab9f8379c0c45",
                 "shasum": ""
             },
             "require": {
@@ -5656,20 +5656,20 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "time": "2021-04-13T14:54:44+00:00"
+            "time": "2021-04-27T17:35:17+00:00"
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.10",
+            "version": "v1.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "82c99b6999f7e89f402cfd7eb4074e619382b3b7"
+                "reference": "b45807430194c73aaa9b2f26cb76038cc747466f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/82c99b6999f7e89f402cfd7eb4074e619382b3b7",
-                "reference": "82c99b6999f7e89f402cfd7eb4074e619382b3b7",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/b45807430194c73aaa9b2f26cb76038cc747466f",
+                "reference": "b45807430194c73aaa9b2f26cb76038cc747466f",
                 "shasum": ""
             },
             "require": {
@@ -5719,20 +5719,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2021-04-13T15:05:45+00:00"
+            "time": "2021-04-27T17:56:34+00:00"
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.3.2",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "cf7a8eb8b3b7ea219b9503df87d3ebefa36f335b"
+                "reference": "b6c585ec900531c35e4b83e65c044f4b2ce7f5dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/cf7a8eb8b3b7ea219b9503df87d3ebefa36f335b",
-                "reference": "cf7a8eb8b3b7ea219b9503df87d3ebefa36f335b",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/b6c585ec900531c35e4b83e65c044f4b2ce7f5dd",
+                "reference": "b6c585ec900531c35e4b83e65c044f4b2ce7f5dd",
                 "shasum": ""
             },
             "require": {
@@ -5786,7 +5786,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2021-04-13T15:08:13+00:00"
+            "time": "2021-04-27T18:09:15+00:00"
         },
         {
             "name": "laravel/sail",
@@ -6041,23 +6041,23 @@
         },
         {
             "name": "nascent-africa/jetstrap",
-            "version": "v2.3",
+            "version": "v2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nascent-africa/jetstrap.git",
-                "reference": "623898436a808b9ce967543a8deddb984afeb314"
+                "reference": "ff41badc51378687c6cb5a3ca266ca720e73e5bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nascent-africa/jetstrap/zipball/623898436a808b9ce967543a8deddb984afeb314",
-                "reference": "623898436a808b9ce967543a8deddb984afeb314",
+                "url": "https://api.github.com/repos/nascent-africa/jetstrap/zipball/ff41badc51378687c6cb5a3ca266ca720e73e5bf",
+                "reference": "ff41badc51378687c6cb5a3ca266ca720e73e5bf",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^8.0",
                 "inertiajs/inertia-laravel": "^0.3",
                 "laravel/breeze": "^1.1",
-                "laravel/jetstream": "^2.2",
+                "laravel/jetstream": "^2.3",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
@@ -6101,7 +6101,7 @@
                 "issues": "https://github.com/nascent-africa/jetstrap/issues",
                 "source": "https://github.com/nascent-africa/jetstrap"
             },
-            "time": "2021-04-04T13:48:21+00:00"
+            "time": "2021-04-22T10:58:30+00:00"
         },
         {
             "name": "nunomaduro/collision",

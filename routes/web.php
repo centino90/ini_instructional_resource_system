@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InstructionLogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,17 +13,12 @@ use App\Http\Controllers\InstructionLogController;
 |
 */
 
-require __DIR__ . '/auth.php';
-
-// Authentications
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
-// Pages
 Route::get('/dashboard', function () {
-    return view('pages.dashboard')->with("currentPage", "Dashboard");
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-/* STARTING POINT */
-Route::resource('instructionlog', InstructionLogController::class);
+require __DIR__.'/auth.php';

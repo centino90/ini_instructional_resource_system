@@ -7,17 +7,20 @@
 
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}"
-                    class="nav-link form-text {{ $currentPage == 'Dashboard' ? 'active' : 'text-dark' }}">
-                    <i class="fas fa-tachometer-alt me-2 {{ $currentPage == 'Dashboard' ? '' : 'text-muted' }}"></i>
+                <a href="#" class="nav-link form-text ">
+                    <i class="fas fa-tachometer-alt me-2 "></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#"
-                    class="nav-link form-text {{ $currentPage == 'InstructionLog' ? 'active' : 'text-dark' }}">
-                    <i
-                        class="fas fa-clipboard-list {{ $currentPage == 'InstructionLog' ? '' : 'text-muted' }} me-2"></i>
+                <a href="#" class="nav-link form-text">
+                    <i class="fas fa-upload me-2"></i>
+                    <span>Upload Image</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link form-text">
+                    <i class="fas fa-clipboard-list me-2"></i>
                     <span>Instruction Log</span>
                 </a>
             </li>

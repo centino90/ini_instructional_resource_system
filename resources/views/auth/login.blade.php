@@ -1,97 +1,62 @@
 <x-guest-layout>
     <x-auth-card>
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo width="82" />
+            </a>
+        </x-slot>
+
         <div class="card-body">
             <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+            <x-auth-session-status class="mb-3" :status="session('status')" />
 
             <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-            <h1 class="fs-3 mb-3 fw-normal">Please sign in</h1>
+            <x-auth-validation-errors class="mb-3" :errors="$errors" />
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <!-- Email Address -->
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-                        autocomplete="none" name="email">
-                    <label for="floatingInput">Email address</label>
+                <div class="form-group">
+                    <x-label for="email" :value="__('Email')" />
+
+                    <x-input id="email" type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
                 <!-- Password -->
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                        name="password">
-                    <label for="floatingPassword">Password</label>
+                <div class="form-group">
+                    <x-label for="password" :value="__('Password')" />
+
+                    <x-input id="password" type="password"
+                             name="password"
+                             required autocomplete="current-password" />
                 </div>
 
-                <!-- Show Password -->
-                {{-- <div class="checkbox mt-2 mb-4">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Show Password
-                    </label>
-                </div> --}}
-                <div class="checkbox mt-2 mb-4">
-                    <label>
-                        <input type="checkbox" value="remember-me" onclick="(function(e, el){
-                            document.getElementById('floatingPassword').type = el.checked ? 'text' : 'password';
-                            })(event, this)"> Show Password
-                    </label>
+                <!-- Remember Me -->
+                <div class="form-group">
+                    <div class="form-check">
+                        <x-checkbox id="remember_me" name="remember" />
+
+                        <label class="form-check-label" for="remember_me">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
                 </div>
-                {{-- <label class="input-group-addon">
-                    <input type="checkbox" style="display:none"
-                      onclick="(function(e, el){
-                        document.getElementById('password').type = el.checked ? 'text' : 'password';
-                        el.parentNode.lastElementChild.innerHTML = el.checked ? '<i class=\'glyphicon glyphicon-eye-close\'>' : '<i class=\'glyphicon glyphicon-eye-open\'>';
-                        })(event, this)">
-                     <span><i class="glyphicon glyphicon-eye-open"></i></span>
-                  </label> --}}
 
-                <button class="w-100 btn btn-lg btn-primary text-white mb-2 rounded-0" type="submit">Log
-                    In</button>
-                <a href="{{ 'register' }}" class="w-100 btn btn-lg btn-success text-white rounded-0"
-                    type="submit">Sign Up</a>
-
-                <p class="mt-5 mb-3 text-muted text-center">© 2021–2022</p>
-
-                {{-- <div class="flex items-center justify-end mt-4">
+                <div class="mb-0">
+                    <div class="d-flex justify-content-end align-items-baseline">
                         @if (Route::has('password.request'))
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                                href="{{ route('password.request') }}">
+                            <a class="text-muted mr-3" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
-        
-                        <x-button class="ml-3">
+
+                        <x-button>
                             {{ __('Log in') }}
                         </x-button>
-                    </div> --}}
+                    </div>
+                </div>
             </form>
-            {{-- <form>
-                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-                            autocomplete="none">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div class="checkbox my-4">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                    </div>
-
-                    <a href="./" class="w-100 btn btn-lg btn-primary text-white mb-2 rounded-0" type="submit">Log
-                        In</a>
-                    <button class="w-100 btn btn-lg btn-success text-white rounded-0" type="submit">Sign Up</button>
-                    <p class="mt-5 mb-3 text-muted text-center">© 2021–2022</p>
-                </form> --}}
         </div>
     </x-auth-card>
 </x-guest-layout>

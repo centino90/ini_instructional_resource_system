@@ -8,55 +8,76 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- icons -->
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased bg-light">
-    @include('layouts.header')
-    <section class="container-fluid">
-        <div class="row">
-            @include('layouts.sidebar-left')
-            <section class="app__main px-0 bg-light">
-                @include('layouts.content-header')
+<body class="font-sans antialiased">
+    <!-- Base Header -->
+    @include('layouts.shared.baseheader')
 
-                <main id="app__main-content" class="px-md-4 mb-5 pb-2">
+    <div class="d-flex">
+        <!-- Left Sidebar Navigation -->
+        @include('layouts.shared.left-sidebar-nav')
+
+        <!-- Page Content -->
+        <main class="app__content container-fluid my-4 py-2">
+            <div class="app__content-main px-2">
+                <div class="container m-0 p-0">
+                    <!-- Title -->
+                    <h1 class="app__content-main__heading mb-4">@yield('title')</h1>
+
+                    <!-- Main Content -->
                     @yield('content')
-                </main>
-            </section>
-        </div>
-    </section>
+                </div>
+            </div>
+        </main>
+    </div>
 
-    @include('layouts.footer')
-
-    <!-- off screens -->
-    @include('layouts.guide')
-
-    @yield("script")
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('script')
     <script>
-        window.onscroll = function() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("app__header").style = "opacity: .9"
-            } else {
-                document.getElementById("app__header").style = "opacity: 1"
-            }
-        };
+        $(document).ready(function() {
+            $('.toggler__sidebar-left').click(function() {
+                $('html').toggleClass('sideber-left-toggled')
+            });
 
-        let appMenuClickCount = 0;
-        document.getElementById("app__menu-btn").addEventListener("click", function() {
-            appMenuClickCount++
-            document.querySelector("html").classList.toggle("app__sidebar-left-toggled")
+            $('#base-search').keyup(function() {
+                if (this.value == "") {
+                    $('.app__subheader__searchresults').removeClass('show')
+                    $('.app__subheader__searchresults .list-group').hide()
+                    return
+                }
+                if ($('.app__subheader__searchresults .card:hidden')) {
+                    $('.app__subheader__searchresults .spinner').remove()
+                }
+
+                $('.app__subheader__searchresults').addClass('show')
+                $('.app__subheader__searchresults .list-group').hide()
+                $('.app__subheader__searchresults .card-body')
+                    .append(`<div class="spinner list-group">
+                                <span class="text-muted">Searching: ${this.value}
+                                </span>
+                                <div class="spinner-grow text-primary" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                    `)
+
+                setTimeout(() => {
+                    $('.app__subheader__searchresults .spinner').remove()
+                    $('.app__subheader__searchresults .list-group').show()
+                }, 2000);
+            })
         })
 
     </script>

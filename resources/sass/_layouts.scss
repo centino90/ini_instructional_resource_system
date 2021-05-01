@@ -1,132 +1,301 @@
+/* Toggled State */
+.sideber-left-toggled {
+    & .app {
+        &__sidebar-left {
+            left: -224px;
+        }
+
+        &__content {
+            &-main {
+                margin-left: 0px;
+            }
+        }
+        
+    }
+}
+
+/* Shared */
+.heading {
+    font-size: 11px;
+    font-weight: bold;
+    color: #B5B4B5;
+    display: flex;
+    align-items: center;
+}
+
 /* LAYOUT STYLE */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="date"] {
-    height: 45px !important;
-}
+.app {
 
-.form-floating label {
-    padding: 5px 0 2px 0 !important;
-}
+    &__subheader {
+        & #base-search {
+            border: 0px !important;
+            outline: 0px !important;
+            box-shadow: inset 0 0 0 #fff !important;
+            &:focus {
+                background-color: $body-bg;
+            }
+        }
 
-.form-control:focus {
-    border: 0 !important;
-}
+        & .navbar-brand {
+            min-width: 224px;
+            max-width: 224px;
+        }
+        
+        &__toolbar-right {
+            position: relative;
+        }
 
-/* GLOBALS */
-
-input {
-    border: 0 !important;
-    border-bottom: 2px solid $primary !important;
-    border-radius: 0 !important;
-    outline: none !important;
-    // padding: 0 0 !important;
-}
-
-table th {
-    font-weight: 500;
-    font-size: 14px;
-    color: $secondary;
-}
-
-table tr td {
-    font-weight: 400;
-    font-size: 15px;
-}
-
-table caption {
-    color: $secondary;
-    font-size: 15px;
-}
-
-a {
-    text-decoration: none !important;
-}
-.text-link:hover {
-    text-decoration: underline !important;
-}
-
-#app__sidebar-left .nav-link:hover {
-    background-color: $blue-100;
-}
-
-#app__sidebar-left .nav-link.active:hover {
-    background: $blue-400;
-}
-
-#app__sidebar-left .nav-link.active {
-    background: $blue-300;
-}
-
-#app__sidebar-left {
-    width: 260px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100; /* Behind the navbar */
-    padding: 48px 0 0; /* Height of navbar */
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-        width: 8px;
+        &__searchresults {
+            background-color: #fff;
+            min-height: 340px;
+            max-height: 340px;
+            width: 100%;
+            overflow-y: scroll;
+            position: absolute;
+            bottom: -345px;
+            left: 0px;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgb(192, 188, 188);
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgb(151, 150, 150);
+            }
+        }
     }
-    &::-webkit-scrollbar-track {
-        background: transparent;
+
+    &__sidebar-left {
+        transition: all .10s ease-in;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100; /* Behind the navbar */
+        padding: 0;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        min-width: 224px;
+        max-width: 224px;
+
+        &-sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 48px; /* Height of navbar */
+            height: 100vh;
+            padding-top: 8.5rem;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgba(192, 188, 188, .5);
+                border-radius: 5px;
+
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba(192, 188, 188, .9);
+            }
+            @media (max-width: 767.98px) {
+                padding-bottom: 50px;
+            }
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            & i {
+                width: 25px
+            }
+        }
+
+        & .nav-item, .nav-link, & .fa, & .fas, & .far {
+            font-size: 13.5px !important;
+            color: #676869;
+        }
+
+        & .nav-link:hover {
+            background-color: $body-bg;
+            border-right: 2px solid rgba($primary, $alpha: .5);
+        }
+        & .nav-link.active {
+            background-color: $body-bg;
+            color: $primary;
+            border-right: 2px solid $primary;
+        }
+        & .nav-link.active i {
+            color: $primary;
+        }
+
     }
-    &::-webkit-scrollbar-thumb {
-        background: #a8a8a8;
-        border-radius: 5px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: #888;
-    }
-    @media (max-width: 767.98px) {
-        padding-bottom: 50px;
+
+    &__content {
+        // background: red;
+        &-main {
+            transition: all .10s ease-in;
+            margin-left: 224px;
+            &__heading {
+                font-size: 18px;
+            }
+        }
     }
 }
 
-#app__header {
-    transition: all 0.3s ease-in-out;
-}
+.files {
+    &__card {
+        position: relative;
+        max-width: 170px;
+        min-width: 170px;
+        height: 100%;
+        background-color: #fff !important;
+        & .card-img {
+            background-color: $body-bg !important;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &::after {
+                font-family: "Font Awesome 5 Free";
+                content: "\f15c";
+                display: inline-block;
+                padding-left: 5px;
+                padding-top: 3px;
+                vertical-align: middle;
+                font-weight: 900;
+                font-size: 45px;
+            }
+        }
+        &[filetype='pdf'] .card-img {
+            &::after {
+                content: "\f1c1";
+                color: $danger;
+            }
+        }
+        &[filetype='doc'] .card-img {
+            &::after {
+                content: "\f1c2";
+                color: $blue;
+            }
+        }
+        &[filetype='ppt'] .card-img {
+            &::after {
+                content: "\f1c4";
+                color: $orange;
+            }
+        }
+        &[filetype='csv'] .card-img {
+            &::after {
+                content: "\f6dd";
+                color: $green;
+            }
+        }
+        &[filetype='excel'] .card-img {
+            &::after {
+                content: "\f1c3";
+                color: $teal;
+            }
+        }
+        &[filetype='img'] .card-img {
+            &::after {
+                content: "\f1c5";
+                color: $purple;
+            }
+        }
+        &[filetype='video'] .card-img {
+            &::after {
+                content: "\f1c8";
+                color: $pink;
+            }
+        }
+        &[filetype='audio'] .card-img {
+            &::after {
+                content: "\f1c7";
+                color: $cyan;
+            }
+        }
+        &[filetype='zip'] .card-img {
+            &::after {
+                content: "\f1c6";
+                color: $indigo;
+            }
+        }
+    }
+    &__card[important] {
+        &::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-top: 25px solid $warning;
+            border-bottom: 25px solid transparent;
+            border-left: 25px solid $warning;
+            border-right: 25px solid transparent;
+        }
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f005";
+            display: inline-block;
+            padding-left: 5px;
+            padding-top: 3px;
+            vertical-align: middle;
+            font-weight: 900;
+            color: #fff;
+            position: absolute;
+        }
+    }
 
-#app__main-content {
-    margin-left: 260px;
-    @media (max-width: 767.98px) {
-        margin-left: 0;
+    & .options-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: $secondary, $alpha: .05);
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        
+        & .preview-btn {
+            height: 100%;
+        }
+
+        & .more-options {
+            position: absolute;
+            right:0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
-#app__main-header {
-    margin-left: 260px;
-    @media (max-width: 767.98px) {
-        margin-left: 0;
+
+.folders {
+    &__folder {
+        max-width: 210px;
+        min-width: 210px;
+        height: 100%;
+        & .card-body {
+            display: flex;
+            align-items: start;
+            flex: 1;
+            position: relative;
+            & .card-option {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+ 
     }
 }
-#app__main-footer {
-    margin-left: 260px;
-    @media (max-width: 767.98px) {
-        margin-left: 0;
-    }
-}
 
-/* TOGGLED VERSION */
 
-.app__sidebar-left-toggled #app__sidebar-left {
-    margin-left: -260px;
-}
 
-.app__sidebar-left-toggled #app__main-header,
-.app__sidebar-left-toggled #app__main-content,
-.app__sidebar-left-toggled #app__main-footer {
-    margin-left: 0;
-}
-
-.navbar-brand {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.25);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
-    width: 260px;
-}
