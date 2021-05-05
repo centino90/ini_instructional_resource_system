@@ -42,104 +42,50 @@
     border: 1px solid #ccc;
     border-radius: 25px;
 }
-
-/* javascript  event sa announcement*/
-#myDIV {
-    margin: 25px;
-    width: 550px;
-    height: 100px;
-    background: #FF7F50;
-    position: relative;
-    font-size: 20px;
-    border-radius: 25px;
+/* SAVEDMATERIAL  SA BABA*/
+#rcorners1 {
+    border-radius: 15px 50px 30px;
+    background: #c56bc5;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
 
-
-@-webkit-keyframes mymove {
-    from {
-        top: 0px;
-    }
-
-    to {
-        top: 200px;
-    }
+#rcorners2 {
+    border-radius: 15px 50px 30px;
+    background: #1ea1c8;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
 
-@keyframes mymove {
-    from {
-        top: 0px;
-    }
-
-    to {
-        top: 200px;
-    }
+#rcorners3 {
+    border-radius: 15px 50px 30px;
+    background: #58ddcb;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
 
-/* end of javascript event sa announcement*/
-
-/*   dropdown_navbar sa pinaka ta-as*/
-
-body {
-    font-family: 'Lato', sans-serif;
+#rcorners4 {
+    border-radius: 15px 50px 30px;
+    background: #6abfe0;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
 
-.overlay {
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
+#rcorners5 {
+    border-radius: 15px 50px 30px;
+    background: #21ad9a;
+    padding: 20px;
+    width: 200px;
+    height: 240px;
 }
+/* SAVEDMATERIAL  SA BABA END HERE!*/
 
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
 
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
 
-.overlay a:hover,
-.overlay a:focus {
-    color: #f1f1f1;
-}
 
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
 
-@media screen and (max-height: 450px) {
-    .overlay {
-        overflow-y: auto;
-    }
-
-    .overlay a {
-        font-size: 20px
-    }
-
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-
-/*   end of navbar na hamburger line sa ta as.*/
 

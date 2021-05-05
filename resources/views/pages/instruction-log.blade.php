@@ -4,40 +4,24 @@
 
 
 <br>
-<body>
-
-    <center>
-        <div id="myDIV" onclick="myFunction()">SPECIAL ANNOUNCEMENT
-            <p>In this school year we have new etc... - from CHED</p>
-            <br>
-            <p>Click this announcement to continue Reading.</p>
-        </div>
-    </center>
-
-</body>
-
-
-
-<i class='fas fa-file-alt' style='font-size:48px;color:#4169E1'></i>
-
-<body>
-
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn"  onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Instructor</a>
-    <a href="#">Instruction</a>
-  </div>
-</div>
-
 <h2>LEARNING EDUCATIONAL CENTER</h2>
 <p>Welcome to the Learning and Educational Instructional System Center .</p>
 <p>Promoting quality continuous improvement of student learning.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-  
 
+
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="tooltip" title="CLICK TO READ ME!">
+    Read More for Special Announcement
+</button>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body" id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Financial Assistance · Grants · CHED Memorandum Orders (CMOs) · Public Consultations / Orientations · Statistics ·
+        List of Authorized Undergraduate Programs
+        Financial Assistance · Grants · CHED Memorandum Orders (CMOs) · Public Consultations / Orientations · Statistics ·
+        List of Authorized Undergraduate Programs
+        Financial Assistance · Grants · CHED Memorandum Orders (CMOs) · Public Consultations / Orientations · Statistics ·
+        List of Authorized Undergraduate Programs
+    </div>
+</div>
 
 <section class="mt-4">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2">
@@ -46,16 +30,23 @@
                 <div class="card-body">
                     <img class="card-img-top" src="image/acd.jpg">
                     <h1 class="form-text">
+
                         <h5>BS EDUC PROGRAM</h5>
                         <i class='far fa-address-book' style='font-size:48px;color:#228B22'></i>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <span class="badge rounded-pill bg-danger ms-2"></span>
                     </h1>
                     <p class="card-text"><small class="text-muted">3 mins ago</small></p>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Activty</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:73%">10% Attendance</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:63%">40% Final Exam</div>
+                    <br>
                     <a href="#" class="text-link">View More</a>
                     <br>
                 </div>
-                <section class="mt-4">
+                <section class="mt-4" onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE?');">
                     <div class="row-cols-1 row-cols-sm-2 row-cols-lg-1 g-2">
                         <div class="card" id="card">
                             <div class="card-body">
@@ -65,6 +56,7 @@
                             </div>
                         </div>
                     </div>
+                </section>
             </div>
         </div>
 
@@ -79,8 +71,14 @@
                     <span class="badge rounded-pill bg-danger ms-2"></span>
                     </h1>
                     <p class="card-text"><small class="text-muted">10 mins ago</small></p>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Activty</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:79%">40% Attendance</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Final Exam</div>
+                    <br>
                     <a href="#" class="text-link">View More</a>
-                    <section class="mt-4">
+                    <section class="mt-4" onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE?');">
                         <div class="row-cols-1 row-cols-sm-2 row-cols-lg-1 g-2">
                             <div class="card1" id="card1">
                                 <div class="card-body">
@@ -105,8 +103,14 @@
                     <span class="badge rounded-pill bg-danger ms-2"></span>
                     </h1>
                     <p class="card-text"><small class="text-muted">10 mins ago</small></p>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Activty</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Attendance</div>
+                    <br>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:90%">90% Final exam</div>
+                    <br>
                     <a href="#" class="text-link">View More</a>
-                    <section class="mt-4">
+                    <section class="mt-4" onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE?');">
                         <div class="row-cols-1 row-cols-sm-2 row-cols-lg-1 g-2">
                             <div class="card2" id="card2">
                                 <div class="card-body">
@@ -117,6 +121,7 @@
                             </div>
                         </div>
                         <br>
+                    </section>
                 </div>
             </div>
         </div>
@@ -135,9 +140,17 @@
                         <h5>BS SSW PROGRAM</h5>
                         <i class='far fa-address-book' style='font-size:48px;color:#1E90FF'></i>
                         <br>
-                        <p class="card-text"><small class="text-muted">10 mins ago</small></p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <section class="mt-4">
+                        <p class="card-text"><small class="text-muted">10 mins ago</small></p>
+                        <br>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:50%">70% Activity</div>
+                        <br>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Attendance</div>
+                        <br>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">87% Final Exam</div>
+                        <br>
+                        <a href="#" class="text-link">View More</a>
+                        <section class="mt-4" onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE?');">
                             <div class="row-cols-1 row-cols-sm-2 row-cols-lg-1 g-2">
                                 <div class="card3" id="card3">
                                     <div class="card-body">
@@ -148,12 +161,13 @@
                                 </div>
                             </div>
                             <br>
+                        </section>
                     </div>
                 </div>
             </div>
-            
+        </div>
+    </div>
 </section>
-
 
 @endsection
 
@@ -191,53 +205,15 @@
 </script>
 
 <script>
-    // start for announcement 
-    var x = document.getElementById("myDIV");
-
-    // Start the animation with JavaScript
-    function myFunction() {
-        x.style.WebkitAnimation = "mymove 10s 2"; // code for announcement on top
-        x.style.animation = "mymove 10s 2"; // code for announcement on top
+    /* announcement color  */
+    function mouseDown() {
+        document.getElementById("myP").style.color = "red";
     }
 
-    // code for announcement on top
-    x.addEventListener("webkitAnimationStart", myStartFunction);
-    x.addEventListener("webkitAnimationIteration", myRepeatFunction);
-    x.addEventListener("webkitAnimationEnd", myEndFunction);
-
-    // code for announcement on top
-    x.addEventListener("animationstart", myStartFunction);
-    x.addEventListener("animationiteration", myRepeatFunction);
-    x.addEventListener("animationend", myEndFunction);
-
-    function myStartFunction() {
-        this.innerHTML = "Krn Umaabot na Pasokan kami nag pa hinumdum - From CHED";
-        this.style.backgroundColor = "#7FFFD4";
-    }
-
-    function myRepeatFunction() {
-        this.innerHTML = "Adunay libre na Edukasyon Gikan sa Pang Gamhanan - From CHED";
-        this.style.backgroundColor = "#FFE4C4";
-    }
-    
-    function myEndFunction() {
-        this.innerHTML = "Daghang Salamat! Madayaw - From CHED";
-        this.style.backgroundColor = "#7FFFD4";
+    function mouseUp() {
+        document.getElementById("myP").style.color = "green";
     }
 </script>
 
-<script>
-// navbar na hamburger line sa ta as
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-}
-
-// end of navbar
-</script>
-     
 
 @endsection
