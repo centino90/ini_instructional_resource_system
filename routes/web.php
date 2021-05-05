@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstructionLogController;
+<<<<<<< HEAD
 use App\Http\Controllers\SharedMaterials;
+=======
+use App\Http\Controllers\SavedMaterialController;
+>>>>>>> 778e0e37b6739fbf1f90c8c229dc941b9a95e859
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,5 +32,9 @@ Route::get('/dashboard', function () {
 
 /* STARTING POINT */
 Route::resource('instructionlog', InstructionLogController::class);
+<<<<<<< HEAD
 
 Route::resource('sharedmaterials', SharedMaterials::class);
+=======
+Route::resource('SavedMaterial', SavedMaterialController::class);
+>>>>>>> 778e0e37b6739fbf1f90c8c229dc941b9a95e859
