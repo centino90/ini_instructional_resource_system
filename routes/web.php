@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstructionLogController;
+use App\Http\Controllers\SavedMaterialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,4 @@ Route::get('/dashboard', function () {
 
 /* STARTING POINT */
 Route::resource('instructionlog', InstructionLogController::class);
+Route::resource('SavedMaterial', SavedMaterialController::class);
