@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstructionLogController;
+use App\Http\Controllers\SharedMaterials;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,5 @@ Route::get('/dashboard', function () {
 
 /* STARTING POINT */
 Route::resource('instructionlog', InstructionLogController::class);
+
+Route::resource('sharedmaterials', SharedMaterials::class);
