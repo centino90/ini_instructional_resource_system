@@ -110,3 +110,53 @@
 .small {
   font-size: .875rem !important;
 }
+
+/* Table */
+
+// table {
+//   border: 0 1px solid $lightGray !important;
+//   thead {
+//     tr {
+//       th {
+//         border: 0 transparent !important;
+//         padding-top: 0 !important;
+//         padding-bottom: 0 !important;
+//         color: $darkGray;
+//         font-size: 14px;
+//         font-weight: normal;
+//       }
+
+//     }
+
+//   }
+//   tbody {
+//     background-color: #fff !important;
+//     tr {
+//       height: 62px;
+
+//       &:hover {
+//         color: rgba($color: $dark, $alpha: .8);
+//         background-color: rgba($color: $lightGray, $alpha: .6) !important;
+//         & td:first-child {
+//           border-left: solid rgba($color: $primary, $alpha: .7) !important;
+//           padding-left: 10px !important;
+//         }
+//         & td:last-child {
+//           border-right: solid rgba($color: $primary, $alpha: .7) !important;
+//         }
+//       }
+//       td {
+//         border-bottom: 1px solid $lightGray !important;
+//         border-top: 0 transparent !important;
+//         vertical-align: middle !important;
+//       }
+//       td:first-child {
+//         padding-left: -10px !important;
+//       }
+//       td:last-child {
+//         width: 200px !important; 
+//       }
+//     }
+//   }
+// }
+

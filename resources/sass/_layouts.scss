@@ -156,6 +156,17 @@
         min-width: 170px;
         height: 100%;
         background-color: #fff !important;
+
+        &:hover {
+            border: 1px solid rgba($color: $primary, $alpha: .7) !important;
+        }
+        &-more {
+            // background-color: rgba($color: $dark, $alpha: .5) !important;
+        }
+        &-more:hover {
+            border: 1px solid $lightGray !important;
+        }
+
         & .card-img {
             background-color: $body-bg !important;
             height: 125px;
@@ -227,6 +238,29 @@
                 color: $indigo;
             }
         }
+        &[filetype='more'] .card-img {
+            &::after {
+                content: "\f15c";
+                color: $gray;
+            }
+        }
+        &[filetype='load-more'] .card-img {
+            &::after {
+                content: "\f110";
+                color: $gray;
+            }
+        }
+        &[filetype='load-more'].loading .card-img {
+            &::after {
+                content: "\f110";
+                color: $primary;
+                animation: spin 4s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+              }
+        }
     }
     &__card[important] {
         &::before {
@@ -256,24 +290,35 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba($color: $secondary, $alpha: .05);
         left: 0;
         top: 0;
         display: none;
         flex-direction: column;
         justify-content: center;
-        
-        & .preview-btn {
-            height: 100%;
-        }
 
-        & .more-options {
+        &-active {
             position: absolute;
-            right:0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: $secondary, $alpha: .04);
+            left: 0;
             top: 0;
-            display: flex;
             flex-direction: column;
+            justify-content: center;
+
         }
+    }
+
+    & .preview-btn {
+        height: 100%;
+    }
+
+    & .more-options {
+        position: absolute;
+        right:0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -282,8 +327,10 @@
         max-width: 210px;
         min-width: 210px;
         height: 100%;
+        &:hover {
+            border: 1px solid rgba($color: $primary, $alpha: .7) !important;
+        }
         & .card-body {
-            display: flex;
             align-items: start;
             flex: 1;
             position: relative;
@@ -297,5 +344,20 @@
     }
 }
 
+.options {
+    &__icon {
+        font-size: 18px;
+        color: $dark;
+    }
+}
 
-
+.scroller {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 75px;
+    padding: 7.5px 15px;
+    background-color: #fff;
+    font-size: 18px;
+    z-index: 400;
+}

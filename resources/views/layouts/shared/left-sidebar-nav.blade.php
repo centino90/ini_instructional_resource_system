@@ -5,34 +5,28 @@
         </h6>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link {{ $title === 'home' ? 'active' : '' }}" href="{{ route('dashboard') }}">
                     <div class="app__sidebar-left__link">
                         <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ $title === 'all files' ? 'active' : '' }}"
+                    href="{{ route('allFiles.index') }}">
+                    <div class="app__sidebar-left__link">
+                        <i class="far fa-file-alt"></i>
                         <span>All files</span>
                     </div>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ $title === 'subjects' ? 'active' : '' }}"
+                    href="{{ route('subjects.index') }}">
                     <div class="app__sidebar-left__link">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-folder"></i>
                         <span>Subjects</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fas fa-upload"></i>
-                        <span>Uploads</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-star"></i>
-                        <span>Important</span>
                     </div>
                 </a>
             </li>

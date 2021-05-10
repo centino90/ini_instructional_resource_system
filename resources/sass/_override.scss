@@ -1,3 +1,7 @@
+.dropdown {
+    display: flex !important;
+    align-items: center !important;
+}
 .dropdown-menu {
     & > a {
         display: flex !important;
@@ -7,6 +11,66 @@
         }
     }
 }
+
+.btn {
+    box-shadow: 0 0 0 transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.btn-muted {
+    background-color: transparent !important;
+    color: $gray !important;
+}
+.btn-black {
+    background-color: transparent !important;
+    color: $dark !important;
+}
+
+.btn-muted:hover {
+    * {
+        color: rgba($color: $dark, $alpha: 1) !important;
+    }
+}
+.btn-black:hover {
+    * {
+        color: rgba($color: $black, $alpha: 1) !important;
+    }
+}
+
+//plugins
+
+/* Context Menu */
+.context-menu-icon {
+    &::before {
+        color: $dark !important;
+        font-size: 15px !important;
+    }
+    &.context-menu-hover:before {
+        color: rgba($color: $dark, $alpha: .8) !important;
+    }
+  }
+
+.context-menu-list {
+    min-width: 218px !important;
+    max-width: 218px !important;
+    box-shadow: 0 0 0 transparent !important;
+  }
+  
+  .context-menu-item {
+    color: $black;
+    padding-left: 35px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .context-menu-item.context-menu-hover {
+    background-color: $lightGray !important;
+    color: rgba($color: $black, $alpha: .9) !important;
+    cursor: pointer;
+  }
+
 // .focus-visible {
 //     border-color: red !important;
 //     outline-color: red !important;

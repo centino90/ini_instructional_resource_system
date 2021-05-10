@@ -10,8 +10,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')"
-                        class="ml-2 text-secondary" style="font-size: 18px">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="true" class="ml-2 text-secondary"
+                        style="font-size: 18px">
                         <span> Instructional
                             <span class="text-primary">Resource</span>
                         </span>
@@ -35,7 +35,7 @@
 
                                     <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
@@ -55,16 +55,18 @@
                         NEW
                         <i class="fa fa-chevron-down ml-2"></i>
                     </button>
-                    <div class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuOffset">
+                    <div class="dropdown-menu shadow-sm animate slideIn" aria-labelledby="dropdownMenuOffset">
                         <a class="w-100 btn btn-primary text-left px-4" href="#">
                             <i class="fas fa-sign-in-alt"></i>
                             Join a Subject
                         </a>
                         <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#base__modal-create"
+                            modal-type="create" modal-title="New Subject">
                             <i class="far fa-folder"></i>
-                            Folder
+                            Subject
                         </a>
+
                         <a class="dropdown-item" href="#">
                             <i class="fa fa-file"></i>
                             Syllabus
@@ -89,7 +91,7 @@
                 </div>
 
                 <div class="app__subheader__toolbar-right d-flex flex-grow-1 px-2">
-                    <button class="btn mr-3 toggler__sidebar-left">
+                    <button class="btn btn-black mr-3 toggler__sidebar-left">
                         <i class="fa fa-bars"></i>
                     </button>
                     <div class="input-group">
@@ -98,24 +100,24 @@
                                 <i class="fa fa-search"></i>
                             </label>
                         </div>
-                        <input type="text" class="form-control border-0" placeholder="Search for files and folders"
+                        <input type="search" class="form-control border-0" placeholder="Search for files and folders"
                             id="base-search">
                     </div>
                     <div class="dropdown dropleft">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-black dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-cog text-dark"></i>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div>
-                    <div class="btn" data-toggle="tooltip" data-placement="bottom" title="Info">
+                    <button class="btn btn-black" data-toggle="tooltip" data-placement="bottom" title="Info">
                         <i class="fa fa-question-circle text-dark"></i>
-                    </div>
-                    <div class="app__subheader__searchresults shadow collapse" id="search-card">
+                    </button>
+                    <div class="app__subheader__searchresults shadow collapse animate slideIn" id="search-card">
                         <div class="card border-top border-bottom rounded-0">
                             <button type="button" class="ml-auto btn close sticky-top mr-4 mt-2 py-2 px-3"
                                 data-toggle="collapse" data-target="#search-card">
