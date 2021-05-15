@@ -95,7 +95,7 @@
                 FILE MATERIALS
             </button>
             <ul class="dropdown-menu">
-                <center><button>
+                <center><button style="color:#9ACD32;">
                         <h5>FILE RECORDS</h5>
                     </button></center>
             </ul>
@@ -108,19 +108,19 @@
                 <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu">
-                <center><button>
+                <center><button style="color:#8B4513;">
                         <h5>SAVE FILE BSIT</h5>
                     </button></center>
                 <br>
-                <center><button>
+                <center><button style="color:#00FF00;">
                         <h5> SAVE FILE BSHM</h5>
                     </button></center>
                 <br>
-                <center><button>
+                <center><button style="color:#FFD700;">
                         <h5> SAVE FILE BSED</h5>
                     </button></center>
                 <br>
-                <center><button>
+                <center><button style="color:#800080;">
                         <h5> SAVE FILE BSSW</h5>
                     </button></center>
             </ul>
@@ -131,7 +131,7 @@
         <br>
 
 
-        <div class="card text-center">
+        <div class=" card text-center">
             <div class="card-header">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
@@ -162,58 +162,78 @@
             </div>
 
             <br>
-            <div class="card text-center">
+            <div class="card text-center" class="mt-4">
                 <div class="card-header">
                     <ul class="nav nav-pills card-header-pills">
-                        <li class="nav-item" id="rcorners1">
-                            <a class="nav-link active" href="#">BSIT</a>
-                            <br>
-                            <button onclick="myFunction()">BSIT RECORDS</button>
-                            <p id="demo"></p>
-                            <br>
-                            <i class="fa fa-save" style="font-size:48px;color:#90EE90"></i>
-                            <p>Saved Materials</p>
-                        </li>
-                        <li class="nav-item" id="rcorners2">
-                            <a class="nav-link active" href="#">BSHM</a>
-                            <br>
-                            <button onclick="myFunction()">BSHM RECORDS</button>
-                            <p id="demo"></p>
-                            <br>
-                            <i class="fa fa-save" style="font-size:48px;color:#FFFF00"></i>
-                            <p>Saved Materials</p>
-                        </li>
-                        <li class="nav-item" id="rcorners3">
-                            <a class="nav-link active" href="#">BSSW</a>
-                            <br>
-                            <button onclick="myFunction()">BSSW RECORDS</button>
-                            <p id="demo"></p>
-                            <br>
-                            <i class="fa fa-save" style="font-size:48px;color:#FA8072"></i>
-                            <p>Saved Materials</p>
-                        </li>
-                        <li class="nav-item" id="rcorners4">
-                            <a class="nav-link active" href="#">BSED</a>
-                            <br>
-                            <button onclick="myFunction()">BSED RECORDS</button>
-                            <p id="demo"></p>
-                            <br>
-                            <i class="fa fa-save" style="font-size:48px;color:#228B22"></i>
-                            <p>Saved Materials</p>
-                        </li>
-                        <br>
-                        <li class="nav-item" id="rcorners5">
-                            <a class="nav-link active" href="#">COLLEGE RECORDS</a>
-                            <br>
-                            <a class="nav-link active" href="#">COLLEGE RECORDS</a>
-                            <br>
-                            <button onclick="myFunction()">REGISTER RECORDS</button>
-                            <p id="demo"></p>
+                        <div class="card-body" id="card" style="width:10rem;">
+                            <li class="nav-item" id="rcorners1">
+                                <a class="nav-link active" href="#">BSIT</a>
+                                <br>
+                                <button onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE IN BSIT PROGRAM?');">BSIT RECORDS</button>
+                                <p id=" bsit"></p>
+                                <br>
+                                <br>
+                                <i class="fa fa-save" style="font-size:48px;color:#90EE90"></i>
+                                <p>Saved Materials</p>
+                            </li>
+                        </div>
 
-                        </li>
+                        <div class="card-body" id="card1" style="width:10rem;">
+                            <li class="nav-item" id="rcorners2">
+                                <a class="nav-link active" href="#">BSHM</a>
+                                <br>
+                                <button onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE IN BSHM PROGRAM?');" style="color:#228B22">BSHM RECORDS</button>
+                                <p id="bshm"></p>
+                                <br>
+                                <br>
+                                <i class="fa fa-save" style="font-size:48px;color:#FFFF00"></i>
+                                <p>Saved Materials</p>
+                            </li>
+                        </div>
 
+                        <div class="card-body" id="card2" style="width:10rem;">
+                            <li class="nav-item" id="rcorners3">
+                                <a class="nav-link active" href="#">BSSW</a>
+                                <br>
+                                <button onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE IN BSSW PROGRAM?');" style="color:#FA8072">BSSW RECORDS</button>
+                                <p id=" bssw"></p>
+                                <br>
+                                <br>
+                                <i class="fa fa-save" style="font-size:48px;color:#FA8072"></i>
+                                <p>Saved Materials</p>
+                            </li>
+                        </div>
 
+                        <div class="card-body" id="card3" style="width:10rem;">
+                            <li class="nav-item" id="rcorners4">
+                                <a class="nav-link active" href="#">BSED</a>
+                                <br>
+                                <button onclick="return confirm('ARE YOU SURE YOU WANT TO CONTINUE IN BSED PROGRAM?');" style="color:#228B22">BSED RECORDS</button>
+                                <p id=" bsed"></p>
+                                <br>
+                                <br>
+                                <i class="fa fa-save" style="font-size:48px;color:#228B22"></i>
+                                <p>Saved Materials</p>
+                            </li>
+                        </div>
                     </ul>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <li class="nav-item" id="rcorners5" style="width:20rem;">
+                        <a class="nav-link active" style="color:#FFFF00;" href="#">COLLEGE RECORDS</a>
+                        <button onclick="myFunction()" style="color:#FF1493;">REGISTER RECORDS. A</button>
+                        <p id="demo"></p>
+
+                        <br>
+                        <a class="nav-link active" style="color:#FFFF00;" href="#">COLLEGE RECORDS</a>
+                        <button onclick="myFunction()" style="color:#FF1493;">REGISTER RECORDS. B</button>
+                        <p id="demo"></p>
+
+                    </li>
                 </div>
 
 
@@ -224,30 +244,22 @@
                     card.addEventListener("click", () => {
                         alert("You've clicked BSIT PROGRAM")
                     })
-                </script>
 
-                <script>
                     let card1 = document.getElementById("card1")
                     card1.addEventListener("click", () => {
                         alert("You've clicked BSHM PROGRAM ")
                     })
-                </script>
 
-                <script>
                     let card2 = document.getElementById("card2")
                     card2.addEventListener("click", () => {
                         alert("You've clicked BS ED PROGRAM")
                     })
-                </script>
 
-                <script>
                     let card3 = document.getElementById("card3")
                     card3.addEventListener("click", () => {
                         alert("You've clicked BS SSW PROGRAM")
                     })
-                </script>
 
-                <script>
                     /* announcement color  */
                     function mouseDown() {
                         document.getElementById("myP").style.color = "red";
@@ -258,52 +270,7 @@
                     } /*END of announcement color  */
                 </script>
 
-                <script>
-                    /* diskette sa baba */
-                    function myFunction() {
-                        var txt;
-                        if (confirm("Press a button! BSIT")) {
-                            txt = "You pressed OK!";
-                        } else {
-                            txt = "You pressed Cancel!";
-                        }
-                        document.getElementById("demo").innerHTML = txt;
-                    }
-                </script>
+            </div>
+        </div>
 
-                <script>
-                    function myFunction() {
-                        var txt;
-                        if (confirm("Press a button! BSHM")) {
-                            txt = "You pressed OK!";
-                        } else {
-                            txt = "You pressed Cancel!";
-                        }
-                        document.getElementById("demo").innerHTML = txt;
-                    }
-                </script>
-
-                <script>
-                    function myFunction() {
-                        var txt;
-                        if (confirm("Press a button! BSSW")) {
-                            txt = "You pressed OK!";
-                        } else {
-                            txt = "You pressed Cancel!";
-                        }
-                        document.getElementById("demo").innerHTML = txt;
-                    }
-                </script>
-
-                <script>
-                    function myFunction() {
-                        var txt;
-                        if (confirm("Press a button! BSED")) {
-                            txt = "You pressed OK!";
-                        } else {
-                            txt = "You pressed Cancel!";
-                        }
-                        document.getElementById("demo").innerHTML = txt;
-                    } /*END of diskette sa baba */
-                </script>
-                @endsection
+        @endsection
