@@ -11129,6 +11129,82 @@ a {
 
 /* STARTING POINT */
 #card {
+<<<<<<< HEAD
+  background-color: cadetblue;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "poppins", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.header h2, .header .h2 {
+  margin: 0 0 15px 0;
+  margin-top: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
+  color: #4c5561;
+  font-size: 2rem;
+  font-weight: 600;
+  -webkit-text-decoration-color: black;
+          text-decoration-color: black;
+}
+
+#card-1 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+#card-2 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+#card-3 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+#card-4 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+#card-5 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+#card-6 {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 1.33rem;
+}
+
+.card p {
+  margin: 0;
+  float: left;
+  color: #a3a5ae;
+  font-size: 0.86rem;
+  line-height: 22px;
+=======
   background-color: #228B22;
   padding-top: 3%;
   margin-left: auto;
@@ -11190,6 +11266,7 @@ a {
   padding: 20px;
   width: 200px;
   height: 150px;
+>>>>>>> 778e0e37b6739fbf1f90c8c229dc941b9a95e859
 }
 
 #rcorners4 {
