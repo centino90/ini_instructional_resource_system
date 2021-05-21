@@ -10,12 +10,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="true" class="ml-2 text-secondary"
-                        style="font-size: 18px">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="true"
+                        class="ml-2 text-secondary font-weight-bold" style="font-size: 18px">
                         <span> Instructional
                             <span class="text-primary">Resource</span>
                         </span>
                     </x-nav-link>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -25,7 +26,8 @@
                     @auth
                         <x-dropdown id="settingsDropdown">
                             <x-slot name="trigger">
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->usersInformation->fullname }}
+                                ({{ Auth::user()->usersInformation->userLevels->name }})
                             </x-slot>
 
                             <x-slot name="content">
@@ -34,8 +36,7 @@
                                     @csrf
 
                                     <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.closest('form').submit();">
+                                        onclick="event.preventDefault();this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
@@ -49,23 +50,35 @@
         <!-- Sub Header -->
         <div class="w-100 border-bottom app__subheader">
             <nav class="navbar d-flex p-0">
-                <div class="navbar-brand border-right col-3 col-md-2 mr-0 py-2 dropright">
+                <div class="navbar-brand border-right col-3 col-md-2 mr-0 py-2 px-3 dropright">
                     <button type="button" class="btn btn-primary w-100 p-0 py-1" id="dropdownMenuOffset"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
                         NEW
                         <i class="fa fa-chevron-down ml-2"></i>
                     </button>
                     <div class="dropdown-menu shadow-sm animate slideIn" aria-labelledby="dropdownMenuOffset">
-                        <a class="w-100 btn btn-primary text-left px-4" href="#">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Join a Subject
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#base__modal-new"
+                            modal-type="submit" modal-title="Submit Instructional Material"
+                            modal-route="{{ route('allFiles.create') }}">
+                            <i class="far fa-file-alt"></i>
+                            File
                         </a>
+                        @if (auth()->user()->usersInformation->userLevels->name === 'program dean')
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#base__modal-new"
+                                modal-type="create" modal-title="New Personnel"
+                                modal-route="{{ route('users.create') }}">
+                                <i class=" far fa-user"></i>
+                                Personnel
+                            </a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#base__modal-new"
+                                modal-type="create" modal-title="New Subject"
+                                modal-route="{{ route('subjects.create') }}">
+                                <i class="far fa-folder"></i>
+                                Subject
+                            </a>
+                        @endif
+
                         <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#base__modal-create"
-                            modal-type="create" modal-title="New Subject">
-                            <i class="far fa-folder"></i>
-                            Subject
-                        </a>
 
                         <a class="dropdown-item" href="#">
                             <i class="fa fa-file"></i>

@@ -10,7 +10,6 @@
                 margin-left: 0px;
             }
         }
-        
     }
 }
 
@@ -18,14 +17,13 @@
 .heading {
     font-size: 11px;
     font-weight: bold;
-    color: #B5B4B5;
+    color: #b5b4b5;
     display: flex;
     align-items: center;
 }
 
 /* LAYOUT STYLE */
 .app {
-
     &__subheader {
         & #base-search {
             border: 0px !important;
@@ -40,7 +38,7 @@
             min-width: 224px;
             max-width: 224px;
         }
-        
+
         &__toolbar-right {
             position: relative;
         }
@@ -71,14 +69,14 @@
     }
 
     &__sidebar-left {
-        transition: all .10s ease-in;
+        transition: all 0.1s ease-in;
         position: fixed;
         top: 0;
         bottom: 0;
         left: 0;
         z-index: 100; /* Behind the navbar */
         padding: 0;
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
         min-width: 224px;
         max-width: 224px;
 
@@ -97,12 +95,11 @@
                 background: transparent;
             }
             &::-webkit-scrollbar-thumb {
-                background: rgba(192, 188, 188, .5);
+                background: rgba(192, 188, 188, 0.5);
                 border-radius: 5px;
-
             }
             &::-webkit-scrollbar-thumb:hover {
-                background: rgba(192, 188, 188, .9);
+                background: rgba(192, 188, 188, 0.9);
             }
             @media (max-width: 767.98px) {
                 padding-bottom: 50px;
@@ -113,18 +110,22 @@
             display: flex;
             align-items: center;
             & i {
-                width: 25px
+                width: 25px;
             }
         }
 
-        & .nav-item, .nav-link, & .fa, & .fas, & .far {
+        & .nav-item,
+        .nav-link,
+        & .fa,
+        & .fas,
+        & .far {
             font-size: 13.5px !important;
             color: #676869;
         }
 
         & .nav-link:hover {
             background-color: $body-bg;
-            border-right: 2px solid rgba($primary, $alpha: .5);
+            border-right: 2px solid rgba($primary, $alpha: 0.5);
         }
         & .nav-link.active {
             background-color: $body-bg;
@@ -134,13 +135,12 @@
         & .nav-link.active i {
             color: $primary;
         }
-
     }
 
     &__content {
         // background: red;
         &-main {
-            transition: all .10s ease-in;
+            transition: all 0.1s ease-in;
             margin-left: 224px;
             &__heading {
                 font-size: 18px;
@@ -158,7 +158,7 @@
         background-color: #fff !important;
 
         &:hover {
-            border: 1px solid rgba($color: $primary, $alpha: .7) !important;
+            border: 1px solid rgba($color: $primary, $alpha: 0.7) !important;
         }
         &-more {
             // background-color: rgba($color: $dark, $alpha: .5) !important;
@@ -184,87 +184,92 @@
                 font-size: 45px;
             }
         }
-        &[filetype='pdf'] .card-img {
+        &[filetype="pdf"] .card-img {
             &::after {
                 content: "\f1c1";
                 color: $danger;
             }
         }
-        &[filetype='doc'] .card-img {
+        &[filetype="docx"] .card-img {
             &::after {
                 content: "\f1c2";
                 color: $blue;
             }
         }
-        &[filetype='ppt'] .card-img {
+        &[filetype="ppt"] .card-img {
             &::after {
                 content: "\f1c4";
                 color: $orange;
             }
         }
-        &[filetype='csv'] .card-img {
+        &[filetype="csv"] .card-img {
             &::after {
                 content: "\f6dd";
                 color: $green;
             }
         }
-        &[filetype='excel'] .card-img {
+        &[filetype="excel"] .card-img {
             &::after {
                 content: "\f1c3";
                 color: $teal;
             }
         }
-        &[filetype='img'] .card-img {
+        &[filetype="png"] .card-img,
+        &[filetype="jpg"] .card-img {
             &::after {
                 content: "\f1c5";
                 color: $purple;
             }
         }
-        &[filetype='video'] .card-img {
+        &[filetype="mp4"] .card-img {
             &::after {
                 content: "\f1c8";
                 color: $pink;
             }
         }
-        &[filetype='audio'] .card-img {
+        &[filetype="mp3"] .card-img {
             &::after {
                 content: "\f1c7";
                 color: $cyan;
             }
         }
-        &[filetype='zip'] .card-img {
+        &[filetype="zip"] .card-img {
             &::after {
                 content: "\f1c6";
                 color: $indigo;
             }
         }
-        &[filetype='more'] .card-img {
+        &[filetype="more"] .card-img {
             &::after {
                 content: "\f15c";
                 color: $gray;
             }
         }
-        &[filetype='load-more'] .card-img {
+        &[filetype="load-more"] .card-img {
             &::after {
                 content: "\f110";
                 color: $gray;
             }
         }
-        &[filetype='load-more'].loading .card-img {
+        &[filetype="load-more"].loading .card-img {
             &::after {
                 content: "\f110";
                 color: $primary;
-                animation: spin 4s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite;
+                animation: spin 4s cubic-bezier(0.1, 0.7, 1, 0.1) infinite;
             }
             @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-              }
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
         }
     }
     &__card[important] {
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             width: 50px;
             height: 50px;
@@ -300,12 +305,11 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: rgba($color: $secondary, $alpha: .04);
+            background: rgba($color: $secondary, $alpha: 0.04);
             left: 0;
             top: 0;
             flex-direction: column;
             justify-content: center;
-
         }
     }
 
@@ -315,7 +319,7 @@
 
     & .more-options {
         position: absolute;
-        right:0;
+        right: 0;
         top: 0;
         display: flex;
         flex-direction: column;
@@ -328,7 +332,7 @@
         min-width: 210px;
         height: 100%;
         &:hover {
-            border: 1px solid rgba($color: $primary, $alpha: .7) !important;
+            border: 1px solid rgba($color: $primary, $alpha: 0.7) !important;
         }
         & .card-body {
             align-items: start;
@@ -340,7 +344,6 @@
                 top: 0;
             }
         }
- 
     }
 }
 

@@ -26,102 +26,64 @@
                     href="{{ route('subjects.index') }}">
                     <div class="app__sidebar-left__link">
                         <i class="fas fa-folder"></i>
-                        <span>Subjects</span>
+                        <span>All Subjects</span>
                     </div>
                 </a>
             </li>
+            @if (auth()->user()->usersInformation->userLevels->name === 'program dean')
+                <li class="nav-item">
+                    <a class="nav-link {{ $title === 'personnels' ? 'active' : '' }}"
+                        href="{{ route('users.index') }}">
+                        <div class="app__sidebar-left__link">
+                            <i class="fas fa-users"></i>
+                            <span>Personnels</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $title === 'reports' ? 'active' : '' }}"
+                        href="{{ route('reports.index') }}">
+                        <div class="app__sidebar-left__link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </div>
+                    </a>
+                </li>
+            @endif
         </ul>
 
         <h6 class="heading px-3 mt-4 mb-1">
             <span>INSTRUCTIONAL</span>
         </h6>
         <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fa fa-file"></i>
-                        <span>Syllabus</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-file"></i>
-                        <span>Exams</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-file"></i>
-                        <span>Activities</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-file"></i>
-                        <span>Quizzes</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-file"></i>
-                        <span>Assignments</span>
-                    </div>
-                </a>
-            </li>
+            @foreach ($g_resourceTypes as $resourceType)
+                <li class="nav-item">
+                    <a class="nav-link {{ $title === $resourceType->name ? 'active' : '' }}"
+                        href="{{ route('' . $resourceType->name . '.index') }}">
+                        <div class="app__sidebar-left__link">
+                            <i class="{{ $resourceType->name === 'syllabus' ? 'fa fa-file' : 'far fa-file' }}"></i>
+                            <span>{{ $resourceType->name }}</span>
+                        </div>
+                    </a>
+                </li>
+            @endforeach
         </ul>
 
         <h6 class="heading px-3 mt-4 mb-1">
             <span>FILE LIBRARY</span>
         </h6>
-        <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fa fa-file-alt"></i>
-                        <span>Documents</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="far fa-image"></i>
-                        <span>Images</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fa fa-video"></i>
-                        <span>Videos</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fa fa-volume-up"></i>
-                        <span>Audio</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="app__sidebar-left__link">
-                        <i class="fa fa-box-open"></i>
-                        <span>Zip Files</span>
-                    </div>
-                </a>
-            </li>
+        <ul class="nav flex-column mb-5">
+            @foreach ($g_fileLibraries as $row)
+                <li class="nav-item">
+                    <a class="nav-link {{ $title === $row->name ? 'active' : '' }}"
+                        href="{{ route('' . $row->name . '.index') }}">
+                        <div class=" app__sidebar-left__link">
+                            <i class="{{ $row->icon }}"></i>
+                            <span>{{ $row->name }}</span>
+                        </div>
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </nav>
 </aside>

@@ -18,38 +18,25 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="username" :value="__('username')" />
 
-                    <x-input id="email" type="email" name="email" :value="old('email')" required autofocus />
+                    <x-input id="username" type="text" name="username" :value="old('username')" required autofocus />
                 </div>
 
                 <!-- Password -->
                 <div class="form-group">
                     <x-label for="password" :value="__('Password')" />
 
-                    <x-input id="password" type="password"
-                             name="password"
-                             required autocomplete="current-password" />
-                </div>
-
-                <!-- Remember Me -->
-                <div class="form-group">
-                    <div class="form-check">
-                        <x-checkbox id="remember_me" name="remember" />
-
-                        <label class="form-check-label" for="remember_me">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
+                    <x-input id="password" type="password" name="password" required autocomplete="current-password" />
                 </div>
 
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                             <a class="text-muted mr-3" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
-                        @endif
+                        @endif --}}
 
                         <x-button>
                             {{ __('Log in') }}

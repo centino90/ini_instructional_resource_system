@@ -17,7 +17,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
 </head>
 
 <body class="font-sans antialiased">
@@ -37,14 +36,24 @@
                 <div class=" m-0 p-0">
                     <!-- Title -->
                     <h1 id="app__title" class="app__content-main__heading mb-4">
+                        @if (substr_count(url()->current(), '/') > 3)
+                            <span class="border-right px-1 mr-2" style="font-size: 13px">
+                                <a class="text-decoration-none text-muted bg-light rounded p-2"
+                                    href="@yield('previous')">
+                                    <i class="fa fa-arrow-left"></i>
+                                    Go back
+                                </a>
+                            </span>
+                        @endif
                         {{ ucwords($title ?? 'default title') }}
+                        {{ session('old') }}
                     </h1>
 
                     <!-- Main Content -->
                     @yield('content')
 
                     <!-- Footer -->
-                    <div class="app__content-footer bg-white mt-5">Footer</div>
+                    {{-- <div class="app__content-footer bg-white mt-5">Footer</div> --}}
                 </div>
             </div>
         </main>
@@ -52,12 +61,38 @@
 
     <!-- Offscreens -->
 
+    <!-- Scroller -->
     <button class="scroller border shadow-lg collapse" title="Scroll Up">
         <i class="fa fa-arrow-up"></i>
     </button>
 
+    <!-- Toast -->
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div id="successToast" class="toast hide position-fixed" role="alert" aria-live="assertive" aria-atomic="true"
+            data-delay="6000" style="min-width:340px;z-index: 1500;top: 1%;right: 1%">
+            <div class="toast-header">
+                <i id="toast-header-icon" class="mr-3"></i>
+                <strong id="toast-header-title" class="mr-auto"></strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                @if ($errors->any)
+                    @foreach ($errors->all() as $error)
+                        {{ $error }} <br>
+                    @endforeach
+                @endif
+
+                @if (session('status'))
+                    {{ session('status') }}
+                @endif
+            </div>
+        </div>
+    </div>
+
     <!-- Modals -->
-    <div class="modal" id="base__modal-create" tabindex="-1" role="dialog" aria-labelledby="base__modal-create"
+    <div class="modal" id="base__modal-new" tabindex="-1" role="dialog" aria-labelledby="base__modal-new"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -68,16 +103,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Subject Name</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <!-- Dynamic markup here -->
                 </div>
             </div>
         </div>
@@ -86,6 +112,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     @yield('script')
     <script>
         $(document).ready(function() {
@@ -139,17 +166,84 @@
             window.scrollTo(0, 0);
         })
 
+        /* Validation Messages */
+        let status = {!! json_encode(session('status'), JSON_HEX_TAG) !!} ?? {!! json_encode($errors->all(), JSON_HEX_TAG) !!};
+
+        if (status.length !== 0) {
+            $('#successToast').toast('show');
+            $('#successToast').on('shown.bs.toast', function() {
+                if (typeof(status) === 'string') {
+                    $(this).find('.toast-header').addClass('bg-success')
+                    $(this).find('#toast-header-title').text('Success Alert!')
+                    $(this).find('#toast-header-icon').addClass('fa fa-check')
+                    return
+                }
+                $(this).find('.toast-header').addClass('bg-danger text-white')
+                $(this).find('#toast-header-title').text('Error Alert!')
+                $(this).find('#toast-header-icon').addClass('fa fa-times-circle')
+            });
+
+        }
+
         /* Modal */
-        $('#base__modal-create').on('show.bs.modal', function(event) {
+        // let errors = {!! json_encode($errors->all(), JSON_HEX_TAG) !!} ?? ''
+        $('#base__modal-new').on('show.bs.modal', function(event) {
             let button = $(event.relatedTarget)
-            let title = button.attr('modal-title')
             let type = button.attr('modal-type')
+            let route = button.attr('modal-route')
+            let modalBody = $(this).find('.modal-body');
+            let title = $(this).find('.modal-title');
 
-            let modal = $(this)
-            modal.find('.modal-title').text(title)
-            modal.find('.modal-body input').val(type)
+            title.text(button.attr('modal-title'))
 
-            $(this).find('input').attr('autofocus');
+            $.ajax({
+                    method: "GET",
+                    url: route,
+                    data: {
+                        reqType: type,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    beforeSend: function(xhr) {
+                        xhr.overrideMimeType("text/plain; charset=x-user-defined");
+                        modalBody.html(`<div class="my-5 py-5 text-center w-100">
+                                            <div class="spinner-grow text-primary" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <br>
+                                            Loading...
+                                        </div>
+                                        `);
+                    }
+                })
+                .done(function(data) {
+                    if (data) {
+                        modalBody.html(data);
+
+                        modalBody.find('button[type="submit"]').text(type)
+
+                        //Update Instructional Form
+                        $('.update-file-switch').click(function() {
+                            $('input[name="ir_file"]').toggle()
+                            $('input[name="ir_file_placeholder"]').toggle()
+                            $(this).find('small').is(':visible') ?
+                                $(this).find('small').toggle() : ''
+                        })
+
+                        //Delete Instructional Form
+                        $('.password-toggler').click(function() {
+                            let $inp = $(this).parent().parent().find('input[name="password"]')
+
+                            $inp.attr('type') === 'password' ?
+                                $inp.attr('type', 'text') :
+                                $inp.attr('type', 'password')
+                        })
+                    }
+                })
+                .fail(function() {
+                    alert("error");
+                })
+                .always(function() {});
+
         })
 
     </script>

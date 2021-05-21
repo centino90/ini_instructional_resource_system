@@ -5,6 +5,9 @@
                 <x-application-logo width="82" />
             </a>
         </x-slot>
+        @if (session()->get('status')) {
+            {{ session()->get('status') }}
+        @endif
 
         <div class="card-body">
             <!-- Validation Errors -->
@@ -15,33 +18,30 @@
 
                 <!-- Name -->
                 <div class="form-group">
-                    <x-label for="name" :value="__('Name')" />
+                    <x-label for="user_id" :value="__('User Id')" />
 
-                    <x-input id="name" type="text" name="name" :value="old('name')" required autofocus />
+                    <x-input id="user_id" type="text" name="user_id" :value="old('user_id')" required autofocus />
                 </div>
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="username" :value="__('Email')" />
 
-                    <x-input id="email" type="email" name="email" :value="old('email')" required />
+                    <x-input id="username" type="text" name="username" :value="old('username')" required />
                 </div>
 
                 <!-- Password -->
                 <div class="form-group">
                     <x-label for="password" :value="__('Password')" />
 
-                    <x-input id="password" type="password"
-                                    name="password"
-                                    required autocomplete="new-password" />
+                    <x-input id="password" type="password" name="password" required autocomplete="new-password" />
                 </div>
 
                 <!-- Confirm Password -->
                 <div class="form-group">
                     <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                    <x-input id="password_confirmation" type="password"
-                                    name="password_confirmation" required />
+                    <x-input id="password_confirmation" type="password" name="password_confirmation" required />
                 </div>
 
                 <div class="mb-0">

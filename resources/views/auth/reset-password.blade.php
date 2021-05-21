@@ -18,9 +18,9 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="username" :value="__('username')" />
 
-                    <x-input id="email" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                    <x-input id="username" type="text" name="username" :value="old('username')" required autofocus />
                 </div>
 
                 <!-- Password -->
@@ -34,8 +34,7 @@
                 <div class="form-group">
                     <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                    <x-input id="password_confirmation" type="password"
-                                        name="password_confirmation" required />
+                    <x-input id="password_confirmation" type="password" name="password_confirmation" required />
                 </div>
 
                 <div class="mb-0">
